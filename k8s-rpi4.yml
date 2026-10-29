@@ -2,9 +2,10 @@ header:
   version: 23
 
 machine: raspberrypi4
-distro: poky
+distro: k8s-cluster
+
 target:
-  - core-image-base
+  - k8s-rootfs-image
   
 repos:
   poky:
@@ -54,7 +55,6 @@ repos:
 
 local_conf_header:
   meta-raspberrypi: |
-    # https://git.yoctoproject.org/meta-raspberrypi/tree/docs/ipcompliance.md?h=scarthgap
-    LICENSE_FLAGS_ACCEPTED="synaptics-killswitch"
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
     
     
