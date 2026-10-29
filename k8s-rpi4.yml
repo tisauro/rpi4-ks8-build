@@ -1,0 +1,60 @@
+header:
+  version: 23
+
+machine: raspberrypi4
+distro: poky
+target:
+  - core-image-base
+  
+repos:
+  poky:
+    url: https://git.yoctoproject.org/poky
+    branch: scarthgap
+    path: layers/poky
+    layers:
+      meta:
+      meta-poky:
+
+  meta-raspberrypi:
+    url: https://git.yoctoproject.org/meta-raspberrypi
+    branch: scarthgap
+    path: layers/meta-raspberrypi
+
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    branch: scarthgap
+    path: layers/meta-openembedded
+    layers:
+      meta-oe:
+      meta-networking:
+      meta-filesystems:
+      meta-python:
+            
+  meta-virtualization:
+    url: https://git.yoctoproject.org/meta-virtualization
+    branch: scarthgap
+    path: layers/meta-virtualization
+    
+  meta-secure-core:
+    url: https://github.com/Wind-River/meta-secure-core.git
+    branch: scarthgap
+    path: layers/meta-secure-core
+    layers:
+      meta-tpm2:
+    
+#  meta-security:
+#    url: git://git.yoctoproject.org/meta-security
+#    branch: scarthgap
+#    path: layers/meta-security
+#    layers:
+#      meta-tpm:
+
+  meta-k8s-rpi: 
+    path: layers/meta-k8s-rpi
+
+local_conf_header:
+  meta-raspberrypi: |
+    # https://git.yoctoproject.org/meta-raspberrypi/tree/docs/ipcompliance.md?h=scarthgap
+    LICENSE_FLAGS_ACCEPTED="synaptics-killswitch"
+    
+    

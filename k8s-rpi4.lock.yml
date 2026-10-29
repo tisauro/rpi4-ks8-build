@@ -1,0 +1,14 @@
+header:
+  version: 14
+overrides:
+  repos:
+    poky:
+      commit: b6ae714a1d1bfae8384654a13da15996cac64712
+    meta-raspberrypi:
+      commit: 018d44467c4f09eb63f8ea5e86e85d755250cf89
+    meta-openembedded:
+      commit: 2db6aece32c7f8ebf6015b468e1b4e21de072e3b
+    meta-virtualization:
+      commit: 6e8e75775f1c73c7d5e8ffa9b1eb6040f7d10819
+    meta-secure-core:
+      commit: bd17305b2c2186f4b70f732a0aed9b60795d9720
